@@ -1,0 +1,11 @@
+<%-- Kiem tra dang nhap. Trang phai khai bao truoc: String requiredRole ("CUSTOMER" hoac "SALES"). --%>
+<%
+    User4 loginUser = (User4) session.getAttribute("loginUser");
+    boolean authorized = loginUser != null
+            && ("CUSTOMER".equals(requiredRole) ? (loginUser instanceof Customer4)
+                                                : (loginUser instanceof SalesStaff4));
+    if (!authorized) {
+        response.sendRedirect(request.getContextPath() + "/view/nguoidung/LoginUI4.jsp");
+        return;
+    }
+%>

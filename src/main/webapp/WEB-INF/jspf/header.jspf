@@ -1,0 +1,36 @@
+<%-- Shared page frame. A page must declare before including: String pageTitle, roleLabel, pageClass; int currentStep (0 = hide the step bar). --%>
+<%
+    String homeHref = request.getContextPath() + "/index.jsp";
+%>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%=h(pageTitle)%> - ShopMan</title>
+  <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
+</head>
+<body>
+<div class="topbar screen-only">
+  <div class="topbar-inner">
+    <a class="brand" href="<%=homeHref%>">ShopMan</a>
+    <span class="tagline">Si&#234;u th&#7883; b&#225;ch h&#243;a tr&#7921;c tuy&#7871;n</span>
+    <% Object hdrUser = session.getAttribute("loginUser");
+       if (hdrUser instanceof User4) { %>
+    <span class="userbox"><span class="uname"><%=h(((User4) hdrUser).getFullName())%></span>
+      <a class="logout" href="<%=request.getContextPath()%>/view/nguoidung/LogoutUI4.jsp">&#272;&#259;ng xu&#7845;t</a></span>
+    <% } %>
+    <% if (roleLabel != null && !roleLabel.isEmpty()) { %><span class="role"><%=h(roleLabel)%></span><% } %>
+  </div>
+</div>
+<div class="page">
+<% if (currentStep > 0) {
+       String[] stepNames = {"Ch\u1ecdn \u0111\u01a1n", "Ph\u00e2n c\u00f4ng giao h\u00e0ng", "H\u00f3a \u0111\u01a1n", "In h\u00f3a \u0111\u01a1n"}; %>
+<ol class="stepper screen-only">
+  <% for (int stepIdx = 0; stepIdx < stepNames.length; stepIdx++) { %>
+  <li class="<%= (stepIdx + 1 < currentStep) ? "done" : ((stepIdx + 1 == currentStep) ? "active" : "") %>">
+    <span class="num"><%=stepIdx + 1%></span><%=stepNames[stepIdx]%>
+  </li>
+  <% } %>
+</ol>
+<% } %>

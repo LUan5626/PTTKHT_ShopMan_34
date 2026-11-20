@@ -1,0 +1,29 @@
+<%@ page import="java.util.*, java.sql.*, java.text.*, model.*, dao.*" %>
+<%!
+    /* Shared helpers. This file is kept pure ASCII so that it is read correctly whatever the file encoding setting is. */
+
+    /** Vietnamese money format, e.g. 350.000\u0111 */
+    static String money(double v) {
+        NumberFormat nf = NumberFormat.getInstance(Locale.forLanguageTag("vi-VN"));
+        nf.setMaximumFractionDigits(0);
+        return nf.format(v) + "\u0111";
+    }
+
+    /** Date as dd/MM/yyyy */
+    static String dateStr(java.sql.Date d) {
+        return d == null ? "" : new SimpleDateFormat("dd/MM/yyyy").format(d);
+    }
+
+    /** Escape HTML special characters */
+    static String h(String s) {
+        if (s == null) return "";
+        return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace("\"", "&quot;");
+    }
+
+    static String orderCode(int id)   { return String.format("DH%03d", id); }
+    static String invoiceCode(int id) { return String.format("HD%03d", id); }
+
+    static String orderCodeOf(String idText) {
+        try { return orderCode(Integer.parseInt(idText.trim())); } catch (Exception e) { return h(idText); }
+    }
+%>

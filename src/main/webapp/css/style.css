@@ -1,0 +1,154 @@
+@charset "UTF-8";
+/* ShopMan - giao dien web don gian, mau chu dao xanh nuoc bien. Khong dung icon hay ky tu dac biet. */
+* { -webkit-box-sizing: border-box; box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Arial, "Helvetica Neue", sans-serif;
+  font-size: 15px; line-height: 1.5; color: #14263d; background: #f2f6fb;
+}
+a { color: #1259a8; }
+a:hover { color: #0b3f78; }
+
+/* ---------- Thanh dau trang ---------- */
+.topbar { background: #0f4c93; color: #fff; }
+.topbar-inner { max-width: 1000px; margin: 0 auto; padding: 14px 24px; overflow: hidden; }
+.brand { float: left; font-size: 20px; font-weight: 700; line-height: 28px; color: #fff; text-decoration: none; }
+.brand:hover { color: #fff; text-decoration: underline; }
+.tagline { float: left; margin: 5px 0 0 16px; font-size: 13px; color: #cfe0f4; }
+.role { float: right; margin-top: 2px; border: 1px solid #7fa9db; padding: 2px 14px; border-radius: 4px; font-size: 13px; }
+
+/* ---------- Khung trang ---------- */
+.page { max-width: 1000px; margin: 0 auto; padding: 26px 24px 20px; }
+.page-title { font-size: 24px; margin: 0 0 16px; color: #0b3f78; }
+.page-sub { margin: 0 0 18px; color: #5a6b80; }
+.card { background: #fff; border: 1px solid #d3e0ef; border-radius: 8px; padding: 22px; margin-bottom: 18px; }
+.count { margin: 0 0 12px; color: #5a6b80; }
+.muted { color: #7a8ba0; font-size: 13px; }
+
+/* ---------- Cac buoc cua quy trinh (chi de hien thi) ---------- */
+.stepper { display: table; width: 100%; table-layout: fixed; list-style: none; margin: 0 0 22px; padding: 0; }
+.stepper li { display: table-cell; text-align: center; padding: 0 6px; color: #7a8ba0; font-size: 13px; }
+.stepper .num {
+  display: block; width: 28px; height: 28px; line-height: 24px; margin: 0 auto 5px;
+  border-radius: 50%; border: 2px solid #c2d3e6; background: #fff; font-weight: 700;
+}
+.stepper li.active { color: #0b3f78; font-weight: 700; }
+.stepper li.active .num { background: #1259a8; border-color: #1259a8; color: #fff; }
+.stepper li.done { color: #1259a8; }
+.stepper li.done .num { border-color: #1259a8; color: #1259a8; }
+
+/* ---------- Trang chu ---------- */
+.hero { text-align: center; padding: 44px 24px; }
+.hero h1 { margin: 0 0 8px; font-size: 26px; color: #0b3f78; }
+.lead { color: #5a6b80; max-width: 520px; margin: 0 auto 26px; }
+.tile {
+  display: inline-block; padding: 18px 44px; border: 1.5px solid #1259a8; border-radius: 8px;
+  text-decoration: none; background: #e8f1fb; text-align: center; margin: 4px 8px;
+}
+.tile:hover { background: #dbe9f9; }
+.tile-title { display: block; font-size: 17px; font-weight: 700; color: #0b3f78; }
+.tile-desc { display: block; font-size: 13px; color: #5a6b80; max-width: 260px; margin: 4px auto 0; }
+
+/* ---------- Form ---------- */
+.searchbar { display: table; width: 100%; margin: 0; }
+.searchbar .field { display: table-cell; width: 100%; padding-right: 12px; vertical-align: bottom; }
+.searchbar .go { display: table-cell; white-space: nowrap; vertical-align: bottom; }
+label { display: block; font-weight: 600; margin-bottom: 6px; }
+input[type="text"] {
+  width: 100%; padding: 10px 12px; border: 1px solid #b7cbe2; border-radius: 6px;
+  font-size: 15px; font-family: inherit; color: #14263d; background: #fff;
+}
+input[type="text"]:focus { outline: none; border-color: #1259a8; box-shadow: 0 0 0 3px rgba(18,89,168,.18); }
+
+.btn {
+  display: inline-block; background: #1259a8; color: #fff; border: 1px solid #1259a8; border-radius: 6px;
+  padding: 10px 26px; font-size: 15px; font-weight: 600; font-family: inherit; cursor: pointer; text-decoration: none;
+}
+.btn:hover { background: #0b3f78; border-color: #0b3f78; color: #fff; }
+.btn-outline { background: #fff; color: #1259a8; padding: 4px 16px; font-size: 13px; }
+.btn-outline:hover { background: #1259a8; color: #fff; }
+.actions { overflow: hidden; margin-top: 16px; }
+.actions .left { float: left; padding-top: 10px; }
+.actions .right { float: right; }
+.back { font-weight: 600; text-decoration: none; }
+.back:hover { text-decoration: underline; }
+
+/* ---------- Bang du lieu ---------- */
+.table-wrap { overflow-x: auto; }
+table.data { width: 100%; border-collapse: collapse; background: #fff; }
+table.data th {
+  background: #e8f1fb; color: #0b3f78; font-weight: 700; font-size: 14px;
+  padding: 10px 12px; text-align: left; border: 1px solid #d3e0ef;
+}
+table.data td { padding: 10px 12px; border: 1px solid #d3e0ef; vertical-align: middle; }
+table.data tr:nth-child(even) td { background: #f8fbfe; }
+table.data tr:hover td { background: #edf4fc; }
+table.data tr.selected td { background: #dbe9f9; }
+table.data th.c, table.data td.c { text-align: center; }
+table.data th.r, table.data td.r { text-align: right; }
+table.data td.key { width: 30%; font-weight: 600; color: #5a6b80; }
+table.selectable tr { cursor: pointer; }
+td form { margin: 0; }
+input[type="checkbox"], input[type="radio"] { width: 17px; height: 17px; cursor: pointer; vertical-align: middle; }
+table.data img { width: 44px; height: 44px; border-radius: 4px; }
+table.data img.big { width: 96px; height: 96px; }
+
+/* ---------- Thong bao, trang thai rong ---------- */
+.alert { padding: 11px 16px; border-radius: 6px; margin: 0 0 16px; border: 1px solid; }
+.alert.info { background: #e8f1fb; border-color: #b7cbe2; color: #0b3f78; }
+.alert.error { background: #fdeceb; border-color: #f0b9b5; color: #8c1d18; }
+.empty-state { text-align: center; padding: 36px 24px; color: #5a6b80; }
+.chips { margin: 0 0 16px; }
+.chips .lbl { font-weight: 600; margin-right: 8px; }
+.chip {
+  display: inline-block; background: #e8f1fb; color: #0b3f78; border: 1px solid #b7cbe2;
+  border-radius: 4px; padding: 1px 10px; font-size: 13px; font-weight: 600; margin: 0 6px 6px 0;
+}
+.hint { color: #5a6b80; margin: 0 0 12px; }
+
+/* Ket qua in (label nhieu dong) */
+.result-list { border: 1px solid #d3e0ef; border-radius: 6px; background: #fff; }
+.result { padding: 10px 16px; border-bottom: 1px solid #e3ebf5; }
+.result:last-child { border-bottom: 0; }
+.result.ok { color: #0b3f78; }
+.result.fail { color: #8c1d18; }
+.result.sum { background: #f2f6fb; font-weight: 700; color: #14263d; }
+
+/* ---------- Chan trang ---------- */
+.footer { max-width: 1000px; margin: 0 auto; padding: 6px 24px 28px; color: #7a8ba0; font-size: 12px; overflow: hidden; }
+.footer .r { float: right; }
+
+@media (max-width: 640px) {
+  .page { padding: 16px 12px; }
+  .tagline { display: none; }
+  .searchbar, .searchbar .field, .searchbar .go { display: block; width: 100%; padding: 0; }
+  .searchbar .go { margin-top: 10px; }
+}
+
+/* ---------- Ban in hoa don ---------- */
+.print-area { display: none; }
+@media print {
+  body { background: #fff; }
+  .screen-only { display: none !important; }
+  .page { padding: 0; max-width: none; }
+  .print-area { display: block; }
+  .invoice { page-break-after: always; padding: 24px; border: 1px solid #000; margin-bottom: 12px; }
+  .invoice:last-child { page-break-after: auto; }
+}
+.invoice h2 { text-align: center; margin: 0 0 12px; }
+.invoice .meta { margin-bottom: 10px; }
+
+/* ---------- Dang nhap / dang ky ---------- */
+input[type="password"], input[type="email"], input[type="tel"] {
+  width: 100%; padding: 10px 12px; border: 1px solid #b7cbe2; border-radius: 6px;
+  font-size: 15px; font-family: inherit; color: #14263d; background: #fff;
+}
+input[type="password"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
+  outline: none; border-color: #1259a8; box-shadow: 0 0 0 3px rgba(18,89,168,.18);
+}
+.auth-card { max-width: 460px; margin: 10px auto 18px; }
+.form-row { margin-bottom: 14px; }
+.auth-switch { margin: 18px 0 0; color: #5a6b80; }
+.userbox { float: right; margin: 2px 0 0 14px; font-size: 13px; color: #cfe0f4; }
+.userbox .uname { margin-right: 10px; }
+.userbox .logout { color: #fff; text-decoration: underline; }
